@@ -10,6 +10,7 @@ import { CharacterService } from '../../services/character.service';
 export class CharacterPageComponent implements OnInit {
 
   characters : Array<Character> = [];
+  isAddView : boolean = false;
   constructor(private characterService : CharacterService) { }
 
   ngOnInit(): void {
@@ -26,6 +27,18 @@ export class CharacterPageComponent implements OnInit {
   deleteCharacter(i:number){
     this.characterService.deleteCharacter(i).subscribe( data =>{
       this.characterService.getCharacters();
-    }, err => console.error(err))
+    })
   }
+
+  addCharacterInParent = (character : Character) : void => {
+    this.characterService.addCharacter(character).subscribe(data =>
+      {
+        this.characterService.getCharacters();
+      });
+    this.isAddView = !this.isAddView;
+ }
+
+  displayAddView() : void {
+    this.isAddView = !this.isAddView;
+  } 
 }

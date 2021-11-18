@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CharacterDisplayComponent } from './components/character-display/character-display.component';
 import { CharacterPageComponent } from './pages/character-page/character-page.component';
+import { AddCharacterComponent } from './layout/add-character/add-character.component';
 
 
 
@@ -9,6 +10,7 @@ import { CharacterPageComponent } from './pages/character-page/character-page.co
   declarations: [
     CharacterDisplayComponent,
     CharacterPageComponent,
+    AddCharacterComponent,
   ],
   imports: [
     CommonModule

@@ -9,7 +9,6 @@ import { Character } from '../modele/Character';
   providedIn: 'root'
 })
 export class CharacterService {
-
   characterStream = new BehaviorSubject<Character[]>([]);
 
   constructor(private http : HttpClient) { }
@@ -24,5 +23,9 @@ export class CharacterService {
 
   deleteCharacter = (id : number): Observable<Character[]> =>{
     return this.http.delete<Character[]>(`${environment.url}/${id}`);
+  }
+
+  addCharacter(character : Character) {
+    return this.http.post<Character[]>(environment.url, character);
   }
 }
