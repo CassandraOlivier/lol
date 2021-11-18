@@ -2,3 +2,19 @@
     text-align: center;
  }
 
+ div {
+    margin-bottom : 25px;
+    margin-left : 25px;
+    margin-right: 25px;
+ }
+ 
+ #validate {
+    margin-left : 25px!important; 
+    margin-right : 25px!important; 
+ }
+
+ #add {
+    margin-left : 25px!important; 
+    margin-right : 25px!important; 
+ }
+ 

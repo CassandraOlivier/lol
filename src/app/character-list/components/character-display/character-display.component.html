@@ -1,7 +1,7 @@
 <div *ngIf="!isUpdateView">
 <div *ngIf="characterActive">
   <h1 class="title">Les personnages Actifs</h1>
-  <button type="button" class="btn btn-warning" (click)="changeView()">{{titleButton}}</button>
+  <button type="button" id="inactif" class="btn btn-warning" (click)="changeView()">{{titleButton}}</button>
   <table class="table table-dark" >
     <thead>
       <tr>
@@ -30,7 +30,7 @@
 
 <div *ngIf="!characterActive">
   <h1 class="title">Les personnages Inactifs</h1>
-  <button type="button" class="btn btn-warning" (click)="changeView()">{{titleButton}}</button>
+  <button type="button" id="actif" class="btn btn-warning" (click)="changeView()">{{titleButton}}</button>
   <table class="table table-dark">
     <thead>
       <tr>
@@ -73,8 +73,8 @@
 </div>
 <div class="form-group">
   <label> Personnage actif : </label>
-  <input type="checkbox" class="form-check-label" #active>
+  <input type="checkbox" class="form-check-label" [checked]="characterToUpdate.active" #active>
   </div>
-<button type="button" class="btn btn-warning" (click)="updateCharacter(title.value,key.value,name.value, active.checked)">Valider</button>
-<button type="button" class="btn btn-warning" (click)="returnToListOfCharacter()">Retour</button>
+<button type="button" class="btn btn-warning" id="validate"(click)="updateCharacter(title.value,key.value,name.value, active.checked)">Valider</button>
+<button type="button" class="btn btn-warning"  id="return" (click)="returnToListOfCharacter()">Retour</button>
 </div>
