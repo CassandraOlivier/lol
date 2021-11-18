@@ -41,4 +41,11 @@ export class CharacterPageComponent implements OnInit {
   displayAddView() : void {
     this.isAddView = !this.isAddView;
   } 
+
+  updateCharacter = (character : Character) : void => {
+   this.characterService.updateCharacter(character).subscribe( data =>  {
+      this.characterService.getCharacters();
+   }, err => console.error(err))
+  }
+ 
 }

@@ -1,13 +1,15 @@
+<div *ngIf="!isUpdateView">
 <div *ngIf="characterActive">
   <h1 class="title">Les personnages Actifs</h1>
   <button type="button" class="btn btn-warning" (click)="changeView()">{{titleButton}}</button>
   <table class="table table-dark" >
     <thead>
       <tr>
-        <th scope="col">id</th>
-        <th scope="col">title</th>
-        <th scope="col">key</th>
-        <th scope="col">name</th>
+        <th scope="col">Id</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Clé</th>
+        <th scope="col">Nom</th>
+        <th scope="col">État</th>
         <th scope="col">Modifier</th>
         <th scope="col">Supprimer</th>
       </tr>
@@ -18,7 +20,8 @@
         <td>{{character.title}}</td>
         <td>{{character.key}}</td>
         <td>{{character.name}}</td>
-        <td><button type="button" class="btn btn-warning">Modifier</button></td>
+        <td>{{character.active}}</td>
+        <td><button type="button" class="btn btn-warning" (click)="viewUpdateCharacter(character)" >Modifier</button></td>
         <td><button type="button" class="btn btn-warning" (click)="deleteCharacter(character)">Supprimer</button></td>
       </tr>
     </tbody>
@@ -31,10 +34,11 @@
   <table class="table table-dark">
     <thead>
       <tr>
-        <th scope="col">id</th>
-        <th scope="col">title</th>
-        <th scope="col">key</th>
-        <th scope="col">name</th>
+        <th scope="col">Id</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Clé</th>
+        <th scope="col">Nom</th>
+        <th scope="col">État</th>
         <th scope="col">Modifier</th>
         <th scope="col">Supprimer</th>
       </tr>
@@ -45,9 +49,32 @@
         <td>{{character.title}}</td>
         <td>{{character.key}}</td>
         <td>{{character.name}}</td>
-        <td><button type="button" class="btn btn-warning">Modifier</button></td>
+        <td>{{character.active}}</td>
+        <td><button type="button" class="btn btn-warning" (click)="viewUpdateCharacter(character)">Modifier</button></td>
         <td><button type="button" class="btn btn-warning" (click)="deleteCharacter(character)">Supprimer</button></td>
       </tr>
     </tbody>
   </table>
+</div>
+</div>
+<div *ngIf="isUpdateView">
+  <h1>Modification d'un personnage</h1>
+<div class="form-group">
+<label>Titre du personnage : </label>
+<input class="form-control" type = "text" value="{{characterToUpdate.title}}" #title>
+</div>
+<div class="form-group">
+<label>Clé du personnage : </label>
+<input class="form-control" type = "text" value="{{characterToUpdate.key}}" #key>
+</div>
+<div class="form-group">
+<label> Nom du personnage : </label>
+<input class="form-control" type = "text" value="{{characterToUpdate.name}}" #name>
+</div>
+<div class="form-group">
+  <label> Personnage actif : </label>
+  <input type="checkbox" class="form-check-label" #active>
+  </div>
+<button type="button" class="btn btn-warning" (click)="updateCharacter(title.value,key.value,name.value, active.checked)">Valider</button>
+<button type="button" class="btn btn-warning" (click)="returnToListOfCharacter()">Retour</button>
 </div>

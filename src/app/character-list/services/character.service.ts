@@ -28,4 +28,8 @@ export class CharacterService {
   addCharacter(character : Character) {
     return this.http.post<Character[]>(environment.url, character);
   }
+
+  updateCharacter = (character : Character): Observable<Character> =>{
+    return this.http.patch<Character>(`${environment.url}/${character.id}`, character);
+  }
 }

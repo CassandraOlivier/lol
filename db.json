@@ -1,32 +1,32 @@
 {
   "character": [
     {
-      "title": "the Monkey King",
+      "title": "",
       "id": 62,
-      "key": "MonkeyKing",
-      "name": "Wukong",
-      "active": true
+      "key": "",
+      "name": "",
+      "active": false
     },
     {
       "title": "Grandmaster at Arms",
       "id": 24,
       "key": "Jax",
       "name": "Jax",
-      "active": true
+      "active": false
     },
     {
-      "title": "the Harbinger of Doom",
+      "title": "the Harbinger of Doome",
       "id": 9,
       "key": "Fiddlesticks",
       "name": "Fiddlesticks",
-      "active": true
+      "active": false
     },
     {
       "title": "the Demon Jester",
       "id": 35,
       "key": "Shaco",
       "name": "Shaco",
-      "active": true
+      "active": false
     },
     {
       "title": "the Uncaged Wrath of Zaun",
@@ -967,9 +967,9 @@
       "active": true
     },
     {
-      "title": "title",
-      "name": "name",
-      "key": "key",
+      "title": "nv",
+      "name": "nv",
+      "key": "nv",
       "active": true,
       "id": 518
     }
