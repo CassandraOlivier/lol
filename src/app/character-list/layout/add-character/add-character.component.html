@@ -1,14 +1,16 @@
-<h1>Ajout d'un personnage</h1>
-<div class="form-group">
-<label>Titre du personnage : </label>
-<input class="form-control" type = "text" #title>
+<h1 class="title">Ajouter un personnage</h1>
+<div id = global>
+    <div class="form-group">
+        <label>Titre du personnage : </label>
+        <input class="form-control" type = "text" #title>
+    </div>
+    <div class="form-group">
+        <label>Clé du personnage : </label>
+        <input class="form-control" type = "text" #key>
+    </div>
+    <div class="form-group">
+        <label> Nom du personnage : </label>    
+        <input class="form-control" type = "text" #name>
+    </div>
+    <button class="btn btn-warning" (click)="addCharacter(title.value, key.value, name.value)" > Ajouter</button>
 </div>
-<div class="form-group">
-<label>Clé du personnage : </label>
-<input class="form-control" type = "text" #key>
-</div>
-<div class="form-group">
-<label> Nom du personnage : </label>
-<input class="form-control" type = "text" #name>
-</div>
-<button class="btn btn-warning" (click)="addCharacter(title.value, key.value, name.value)" > Ajouter</button>

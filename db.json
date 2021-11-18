@@ -1,11 +1,11 @@
 {
   "character": [
     {
-      "title": "",
+      "title": "Titre du personnage",
       "id": 62,
-      "key": "",
-      "name": "",
-      "active": false
+      "key": "clé du personnage",
+      "name": "Nom du personnage",
+      "active": true
     },
     {
       "title": "Grandmaster at Arms",

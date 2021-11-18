@@ -20,7 +20,13 @@ export class CharacterPageComponent implements OnInit {
 
   getCharacters = () : void => {
     this.characterService.characterStream.subscribe( data  => {
-        this.characters = data;
+        this.characters = data.sort((characterA, characterB) => {
+          if (characterA.title < characterB.title)
+            return -1;
+          if (characterA.title > characterB.title)
+            return 1;
+          return 0;
+        });
     }, err => console.error(err) )
   }
 

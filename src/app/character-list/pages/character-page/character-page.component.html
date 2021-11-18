@@ -1,7 +1,9 @@
 
 <div *ngIf="!isAddView">
 <app-character-display [listByCharacterPage]="characters" (delete)="deleteCharacter($event)" (update)="updateCharacter($event)"></app-character-display>
-<button type="button" class="btn btn-warning" (click)="displayAddView()" >Créer un personnage</button>
+<div>
+    <button type="button" class="btn btn-warning" (click)="displayAddView()" >Créer un personnage</button>
+</div>
 </div>
 
 

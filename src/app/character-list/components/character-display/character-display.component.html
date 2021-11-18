@@ -14,7 +14,7 @@
         <th scope="col">Supprimer</th>
       </tr>
     </thead>
-    <tbody *ngFor="let character of listByCharacterPage" >
+    <tbody *ngFor="let character of listByCharacterPage " >
       <tr *ngIf="character.active">
         <th scope="row" >{{character.id}}</th>
         <td>{{character.title}}</td>
@@ -58,7 +58,7 @@
 </div>
 </div>
 <div *ngIf="isUpdateView">
-  <h1>Modification d'un personnage</h1>
+  <h1 class="title">Modification d'un personnage</h1>
 <div class="form-group">
 <label>Titre du personnage : </label>
 <input class="form-control" type = "text" value="{{characterToUpdate.title}}" #title>
