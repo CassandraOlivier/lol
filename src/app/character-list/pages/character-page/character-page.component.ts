@@ -22,4 +22,10 @@ export class CharacterPageComponent implements OnInit {
         this.characters = data;
     }, err => console.error(err) )
   }
+
+  deleteCharacter(i:number){
+    this.characterService.deleteCharacter(i).subscribe( data =>{
+      this.characterService.getCharacters();
+    }, err => console.error(err))
+  }
 }

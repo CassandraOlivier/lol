@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Character } from '../../modele/Character';
 
 @Component({
@@ -8,6 +8,8 @@ import { Character } from '../../modele/Character';
 })
 export class CharacterDisplayComponent implements OnInit {
   @Input() listByCharacterPage: Array<Character> = [];
+  @Output() delete: EventEmitter<number> = new EventEmitter<number>();
+
   characterActive : boolean = true;
   titleButton : string = "Inactif";
   constructor() { }
@@ -25,5 +27,8 @@ export class CharacterDisplayComponent implements OnInit {
     }
   }
   
+  deleteCharacter(i : Character){
+    this.delete.emit(i.id);
+  }
   
 }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
 import { Character } from '../modele/Character';
 
@@ -19,5 +20,9 @@ export class CharacterService {
         this.characterStream.next(data);
       }
     )
+  }
+
+  deleteCharacter = (id : number): Observable<Character[]> =>{
+    return this.http.delete<Character[]>(`${environment.url}/${id}`);
   }
 }
